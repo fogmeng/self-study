@@ -31,4 +31,10 @@ public class WeightRobbinTest {
 			System.out.println(v.toString());
 		}
 	}
+
+	@Test
+	public void testA(){
+		System.out.println((27&17+23|13)%11.31);
+
+	}
 }
