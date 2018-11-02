@@ -15,7 +15,8 @@
 		<module>mq</module>
 		<module>mysql</module>
 		<module>interview</module>
+        <module>guopao</module>
 
-	</modules>
+    </modules>
 
 </project>
