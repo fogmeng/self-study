@@ -13,7 +13,7 @@ import java.net.Socket;
  * @Date 2018/11/2 11:17
  */
 @Slf4j
-public class client {
+public class BioClient {
 
     /**
      * 服务端默认端口
