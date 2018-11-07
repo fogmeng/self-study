@@ -7,7 +7,7 @@ import java.net.Socket;
  * @author SongQingWei
  * @date 2018年11月01 11:06
  */
-public class Client {
+public class Client2 {
 
     private static final String HOST = "127.0.0.1";
 
@@ -23,6 +23,6 @@ public class Client {
 
     public static void connect() throws IOException {
         Socket socket = new Socket(HOST, PORT);
-        new ClientHandler(socket, "0").start();
+        new ClientHandler(socket, "2").start();
     }
 }

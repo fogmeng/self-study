@@ -41,8 +41,9 @@ public class BioClient {
         try {
             socket = new Socket(HOST,defaultServerPort);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out = new PrintWriter(socket.getOutputStream());
+            out = new PrintWriter(socket.getOutputStream(),true);
 
+            log.info(msg);
             out.println(msg);
 
             result = in.readLine();

@@ -26,6 +26,7 @@ public class Server {
 
 
     public  static void start() throws IOException {
+        log.info("server starting……");
         start(DEFAULT_PORT);
     }
 
@@ -43,6 +44,7 @@ public class Server {
 
             while (true){
                 Socket socket = serverSocket.accept();
+                log.info(socket.toString()+":客户端连接……");
                 new Thread(new ServerHander(socket)).start();
             }
 

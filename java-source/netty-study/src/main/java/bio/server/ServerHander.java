@@ -16,7 +16,7 @@ public class ServerHander implements Runnable {
 
     public ServerHander(Socket socket) {
 
-        socket = socket;
+        this.socket = socket;
 
     }
 
