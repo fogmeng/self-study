@@ -26,6 +26,10 @@ public class BioServerHander implements Runnable {
         this.uidMap = map;
     }
 
+    public BioServerHander(Socket socket) {
+        this.socket = socket;
+    }
+
     @Override
     public void run() {
 
