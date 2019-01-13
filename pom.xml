@@ -16,6 +16,7 @@
 		<module>mysql</module>
 		<module>interview</module>
         <module>guopao</module>
+		<module>juice</module>
 
     </modules>
 
