@@ -19,7 +19,6 @@ public class LambdaUsage {
                 result.add(a);
         }
         return result;
-
     }
 
     private static List<Apple> filterByWeight(List<Apple> source, LongPredicate predicate) {
