@@ -19,7 +19,6 @@
 		<module>junit</module>
         <module>netty-study</module>
         <module>java8-wwj</module>
-		<module>java8-wwj</module>
 
 	</modules>
 
