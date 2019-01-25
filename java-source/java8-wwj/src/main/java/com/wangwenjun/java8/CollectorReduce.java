@@ -38,9 +38,14 @@ public class CollectorReduce {
         Integer collect1 = menu.stream().collect(Collectors.collectingAndThen(toList(), t -> t.size()));
 
 
+
         Map<Dish.Type, List<Dish>> collect2 = menu.stream().collect(Collectors.groupingBy(Dish::getType));
 
         Map<Dish.Type, Double> collect3 = menu.stream().collect(Collectors.groupingBy(Dish::getType, Collectors.averagingInt(Dish::getCalories)));
+
+        Map<Dish.Type, Long> collect4 = menu.stream().collect(Collectors.groupingBy(Dish::getType, Collectors.counting()));
+
+        collect4.forEach((k, v) -> System.out.println("key:value = " + k + ":" + v));
 
 
 

@@ -1,5 +1,8 @@
 package com.wangwenjun.java8;
 
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
 import java.text.ParseException;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -10,6 +13,7 @@ import java.time.temporal.ChronoField;
  * @Date:2016/11/13 QQ:532500648
  * QQ交流群:286081824
  ***************************************/
+@Slf4j
 public class DateTest {
     public static void main(String[] args) throws ParseException, InterruptedException {
 /*        Date date = new Date(116, 2, 18);
@@ -29,14 +33,22 @@ public class DateTest {
                 }
             }).start();
         }*/
-
-//        testLocalDate();
-//        testLocalTime();
-//        combineLocalDateAndTime();
-//        testInstant();
-//        testDuration();
-//        testPeriod();
-//        testDateFormat();
+        System.out.println();
+        System.out.println("===============testLocalDate===========");
+        testLocalDate();
+        System.out.println("===============testLocalTime===========");
+        testLocalTime();
+        System.out.println("===============combineLocalDateAndTime===========");
+        combineLocalDateAndTime();
+        System.out.println("===============testInstant===========");
+        testInstant();
+        System.out.println("===============testDuration===========");
+        testDuration();
+        System.out.println("===============testPeriod===========");
+        testPeriod();
+        System.out.println("===============testDateFormat===========");
+        testDateFormat();
+        System.out.println("===============testDateParse===========");
         testDateParse();
     }
 
@@ -48,12 +60,14 @@ public class DateTest {
         System.out.println(localDate.getDayOfYear());
         System.out.println(localDate.getDayOfMonth());
         System.out.println(localDate.getDayOfWeek());
+        System.out.println(localDate.getChronology());
 
-        localDate.get(ChronoField.DAY_OF_MONTH);
+        System.out.println(localDate.get(ChronoField.DAY_OF_MONTH));
     }
 
     private static void testLocalTime() {
         LocalTime time = LocalTime.now();
+        System.out.println(time);
         System.out.println(time.getHour());
         System.out.println(time.getMinute());
         System.out.println(time.getSecond());
@@ -80,7 +94,9 @@ public class DateTest {
     private static void testDuration() {
         LocalTime time = LocalTime.now();
         LocalTime beforeTime = time.minusHours(1);
+        System.out.println(beforeTime);
         Duration duration = Duration.between(time, beforeTime);
+        System.out.println(duration.getSeconds());
         System.out.println(duration.toHours());
     }
 
@@ -94,11 +110,9 @@ public class DateTest {
     private static void testDateFormat() {
         LocalDate localDate = LocalDate.now();
         String format1 = localDate.format(DateTimeFormatter.BASIC_ISO_DATE);
-//        String format2 = localDate.format(DateTimeFormatter.ISO_LOCAL_TIME);
         System.out.println(format1);
-//        System.out.println(format2);
 
-        DateTimeFormatter mySelfFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter mySelfFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         String format = localDate.format(mySelfFormatter);
         System.out.println(format);
     }
@@ -113,4 +127,5 @@ public class DateTest {
         LocalDate localDate2 = LocalDate.parse(date2, mySelfFormatter);
         System.out.println(localDate2);
     }
+
 }
